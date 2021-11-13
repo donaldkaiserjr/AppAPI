@@ -22,9 +22,13 @@ class AppForm extends Component {
       : this.setState({ [name]: value });
   }
 
+  handleSubmit(event) {
+    console.log("Submitted to the API");
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           value={this.state.firstName}
@@ -97,6 +101,7 @@ class AppForm extends Component {
         </h1>
         <h2>You are a {this.state.gender}</h2>
         <h2>Your favorite color is {this.state.favColor}</h2>
+        <button type="submit">Submit</button>
       </form>
     );
   }

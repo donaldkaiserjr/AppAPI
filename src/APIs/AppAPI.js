@@ -5,7 +5,8 @@ class AppAPI extends Component {
     super();
     this.state = {
       loading: false,
-      character: {}
+      character: {},
+      height: null
     };
   }
   componentDidMount() {
@@ -19,12 +20,15 @@ class AppAPI extends Component {
       .then((data) => {
         this.setState({
           loading: false,
-          character: data
+          character: data,
+          height: data
         });
       });
   }
   render() {
-    const text = this.state.loading ? "loading..." : this.state.character.name;
+    const text = this.state.loading
+      ? "loading..."
+      : this.state.character.name + `  --${this.state.character.height} lbs `;
     return (
       <div>
         <h1>{text}</h1>

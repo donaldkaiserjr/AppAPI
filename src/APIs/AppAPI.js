@@ -8,7 +8,6 @@ class AppAPI extends Component {
       character: {}
     };
   }
-
   componentDidMount() {
     this.setState({ loading: true });
 
@@ -24,7 +23,6 @@ class AppAPI extends Component {
         });
       });
   }
-
   render() {
     const text = this.state.loading ? "loading..." : this.state.character.name;
     return (

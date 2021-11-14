@@ -32,7 +32,6 @@ class AppForm2 extends Component {
     Gender: ${this.state.gender}
     Destination: ${this.state.destination}
     Dietary restrictions: ${this.state.vegetarian}
-    
     `);
     event.preventDefault();
   }
